@@ -45,7 +45,11 @@
     // delete the comment with the ID of 823423
     const removeIndex = comments.findIndex(comment => comment.id === 823423)
     console.log(removeIndex);
-    const updatedComments = comments.filter(comment => comment.id !== 823423)
+    // const updatedComments = comments.filter(comment => comment.id !== 823423)
+    const updatedComments = [
+      ...comments.slice(0, removeIndex),
+      ...comments.slice(removeIndex + 1)
+    ]
     console.table(updatedComments);
 
   </script>
